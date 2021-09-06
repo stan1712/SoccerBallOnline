@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Button } from 'rsuite';
 import './App.css';
 import 'rsuite/dist/styles/rsuite-default.css';
+import './assets/less/SBO.less'
 
 function App() {
   return (
