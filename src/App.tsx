@@ -1,12 +1,14 @@
 import React from 'react';
 
 import 'rsuite/dist/styles/rsuite-default.css';
-import './assets/less/SBO.less'
+import Navigation from './components/@base/Navigation';
+
 
 function App() {
   return (
     <div className="App">
-
+        <Navigation />
+        
     </div>
   );
 }
