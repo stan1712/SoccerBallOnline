@@ -6,6 +6,7 @@ import './assets/less/SBO.less';
 import Accueil from './views/accueil';
 import Contact from './views/contact';
 import Access from './views/access';
+import Lobby from './views/lobby';
 
 import Navigation from './components/@base/Navigation';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" exact component={Accueil}/>
           <Route path="/contact" exact component={Contact}/>
           <Route path="/access" exact component={Access}/>
+          <Route path="/lobby" exact component={Lobby}/>
         </Container>
       </Router>
     </div>
