@@ -7,6 +7,7 @@ import Accueil from './views/accueil';
 import Contact from './views/contact';
 import Access from './views/access';
 import Lobby from './views/lobby';
+import Profile from './views/profile';
 
 import Navigation from './components/@base/Navigation';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" exact component={Contact}/>
           <Route path="/access" exact component={Access}/>
           <Route path="/lobby" exact component={Lobby}/>
+          <Route path="/profile" exact component={Profile}/>
         </Container>
       </Router>
     </div>
