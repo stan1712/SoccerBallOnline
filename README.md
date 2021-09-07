@@ -1,5 +1,6 @@
-# BOILER PLATE
-## Stack : Vue Firebase Vuetify
+# SoccerBallOnline
 
 ### Installation
-``git clone https://stanislasbdx@bitbucket.org/infographartweb/boilerplate-vue-firebase-vuetify.git``
+``git clone https://github.com/stan1712/SoccerBallOnline.git``
+``yarn install``
+``yarn run serve``
