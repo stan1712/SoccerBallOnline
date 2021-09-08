@@ -21,7 +21,7 @@
 					<v-col cols="4" offset="4">
 						<v-avatar color="primary" size="70">
 							<img v-if="false" :src="'http://api.multiavatar.com/' + $firebase.auth().currentUser.displayName">
-							<span v-else>{{ $firebase.auth().currentUser.displayName[0] || upperCase }}</span>
+							<span v-else-if="$firebase.auth().currentUser.displayName">{{ $firebase.auth().currentUser.displayName[0] || upperCase }}</span>
 						</v-avatar>
 					</v-col>
 					<v-col cols="12" class="pt-0">
@@ -52,7 +52,7 @@
 							<v-list-item-title>Mon profil</v-list-item-title>
 						</v-list-item>
 
-						<v-divider></v-divider>
+						<v-divider class="my-4"></v-divider>
 
 						<v-list-item link router @click="signOut()">
 							<v-list-item-content>
