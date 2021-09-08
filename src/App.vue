@@ -3,7 +3,9 @@
 		<Navigation :isTransparent="transparent" />
 
 		<v-main style="background-color: #e3e3e3">
-			<router-view :class="margins"></router-view>
+			<transition name="fade" mode="out-in">
+				<router-view :class="margins"></router-view>
+			</transition>
 		</v-main>
 	</v-app>
 </template>
@@ -25,7 +27,7 @@
 
 		watch: {
 			$route: function() {
-				if(this.$route.path == "/") this.margins = "px-5";
+				if(this.$route.path === "/") this.margins = "px-5";
 			}
 		}
 	};
