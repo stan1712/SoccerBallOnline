@@ -1,9 +1,9 @@
 <template>
 	<v-app>
-		<Navigation/>
+		<Navigation :isTransparent="transparent" />
 
-		<v-main style="background-color: #e3e3e3" class="px-5 mt-4">
-			<router-view></router-view>
+		<v-main style="background-color: #e3e3e3">
+			<router-view :class="margins"></router-view>
 		</v-main>
 	</v-app>
 </template>
@@ -19,8 +19,15 @@
 		},
 
 		data: () => ({
-			//
+			margins: "mt-4 px-5",
+			transparent: "primary", //primary
 		}),
+
+		watch: {
+			$route: function() {
+				if(this.$route.path == "/") this.margins = "px-5";
+			}
+		}
 	};
 
 </script>
