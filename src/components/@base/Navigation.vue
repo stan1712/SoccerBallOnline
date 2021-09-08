@@ -19,9 +19,9 @@
 			<v-row class="mt-2">
 				<template v-if="$firebase.auth().currentUser">
 					<v-col cols="4" offset="4">
-						<v-avatar color="primary" size="70">
-							<img v-if="false" :src="'http://api.multiavatar.com/' + $firebase.auth().currentUser.displayName">
-							<span v-else-if="$firebase.auth().currentUser.displayName">{{ $firebase.auth().currentUser.displayName[0] || upperCase }}</span>
+						<v-avatar color="secondary" size="70">
+							<img v-if="$firebase.auth().currentUser.photoURL" :src="$firebase.auth().currentUser.photoURL" class="pa-2">
+							<h1 class="display-1" v-else>{{ $firebase.auth().currentUser.displayName[0].toUpperCase() }}</h1>
 						</v-avatar>
 					</v-col>
 					<v-col cols="12" class="pt-0">
