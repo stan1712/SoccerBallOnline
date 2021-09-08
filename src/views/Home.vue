@@ -8,20 +8,23 @@
 
 		</div>
 		<div>
-			<h1 class="d-flex justify-center" >Déscription du jeu</h1>
 			<v-card class="pa-4">
-			<p class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<v-card-titre class="d-flex justify-center"> Description du jeu </v-card-titre>
+				<br>
+				<p class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</v-card>
 		</div>
 		<div>
-			<h1 class="d-flex justify-center">trailer</h1>
 			<v-card class="pa-4">
-			<p class="d-flex justify-center"></p>
+				<v-card-titre class="d-flex justify-center"> Trailler </v-card-titre>
+				<br>
+				<p class="d-flex justify-center"></p>
 			</v-card>
 		</div>
 		<div>
-			<h1 class="d-flex justify-center">Crédits</h1>
 			<v-card class="pa-4">
+				<v-card-titre class="d-flex justify-center"> Crédits </v-card-titre>
+				<br>
 				<p class="d-flex justify-center">Projet Workshop réalisé sur 5 jours par quatre B2 de l'EPSI Bordeaux et 2 SN2.</p>
 				<v-list class="d-flex justify-center"> 
 					Stanislas Castaybert <br>
@@ -29,7 +32,7 @@
 					Begüm Cetin <br>
 					Matheo Carlier <br>
 
-				</v-list>
+			</v-list>
 			</v-card>
 		</div>
 	</div>
