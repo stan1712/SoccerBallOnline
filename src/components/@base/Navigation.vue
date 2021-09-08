@@ -52,7 +52,7 @@
 							<v-list-item-title>Mon profil</v-list-item-title>
 						</v-list-item>
 
-						<v-divider></v-divider>
+						<v-divider class="my-4"></v-divider>
 
 						<v-list-item link router @click="signOut()">
 							<v-list-item-content>
