@@ -19,7 +19,7 @@
 				</v-card>
 
 			</v-col>
-			
+
 			<v-col cols="12" sm="6">
 
 				<v-card>
@@ -31,7 +31,7 @@
 							<v-text-field label="Nom d'utilisateur" v-model="signup.username"></v-text-field>
 
 							<v-text-field label="Email" v-model="signup.email"></v-text-field>
-							
+
 							<v-row>
 								<v-col cols="12" sm="6">
 									<v-text-field label="Mot de passe" type="password" v-model="signup.password"></v-text-field>
@@ -98,6 +98,7 @@
 			}
 		}
 	}
+
 </script>
 
 <style scoped>
