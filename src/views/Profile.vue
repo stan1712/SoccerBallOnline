@@ -2,59 +2,83 @@
 	<div>
 		<v-row class="ma-5">
 			<v-col cols="6" class="d-flex justify-end">
-				<v-card rounded="xl" class="ma-2 pa-5" height="610" max-width="395" elevation="2" outlined>
-					<v-row>
-						<v-col cols="6">
-							<v-avatar size="120">
-								<img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-							</v-avatar>
-						</v-col>
-						<v-col cols="6" class="d-flex flex-row-reverse">
-							<h3 style="font-size: 25px">PROFILE</h3>
-							<v-col class="d-flex align-end">
-								<h4 class="grey--text text--darken-2" style="font-size: 18px">
-									Kikyris
-								</h4>
+				<v-card rounded="xl" class="ma-2 pa-5" height="85vh" max-width="395" elevation="2" outlined>
+					<v-card-text>
+						<v-row>
+							<v-col cols="6">
+								<v-avatar size="120" color="secondary">
+									<img v-if="userInfo.avatar" :src="userInfo.avatar" class="pa-2" />
+									<h1 class="display-1" v-else>{{ $firebase.auth().currentUser.displayName[0].toUpperCase() }}</h1>
+								</v-avatar>
 							</v-col>
-						</v-col>
-						<v-col cols="12">
-							<p class="grey--text text--darken-2 mb-0" style="font-size: 18px">
-								adresse.mail@epsi-workshop.com
-							</p>
-							<v-form v-model="valid" class="d-flex justify-start">
-								<v-container>
-									<v-row>
-										<v-col cols="12">
-											<v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-										</v-col>
-									</v-row>
-								</v-container>
-							</v-form>
-						</v-col>
+							<v-col cols="6" class="d-flex flex-row-reverse">
+								<h3 style="font-size: 25px">PROFIL</h3>
+							</v-col>
+							<v-col cols="12">
+								<v-form class="d-flex justify-start">
+									<v-container>
 
-					</v-row>
+										<v-text-field v-model="userInfo.username" label="Nom d'utilisateur"></v-text-field>
+
+										<v-text-field v-model="userInfo.email" label="E-mail"></v-text-field>
+
+										<v-divider class="my-5"></v-divider>
+
+										<v-text-field v-model="userInfo.avatar" label="Avatar"></v-text-field>
+
+									</v-container>
+								</v-form>
+							</v-col>
+
+						</v-row>
+					</v-card-text>
+					<v-card-actions>
+						<v-btn color="primary" block @click="update()">Sauvegarder</v-btn>
+					</v-card-actions>
 				</v-card>
 			</v-col>
 
 			<v-col cols="6">
-				<v-card rounded="xl" class="mb-4 ma-2 pa-5" height="130" max-width="395" elevation="2" outlined>
-					<v-row>
-						<v-col cols="6"> </v-col>
-						<v-col cols="6" class="d-flex flex-row-reverse">
-							<h3 style="font-size: 25px">OPTIONS</h3>
-						</v-col>
-						<v-container class="px-0" fluid>
-							<v-switch v-model="switch1" :label="`Light theme: ${switch1.toString()}`"></v-switch>
-						</v-container>
-					</v-row>
+				<v-card rounded="xl" class="mb-4 ma-2 pa-5" height="15vh" max-width="395" elevation="2" outlined>
+					<v-card-text>
+						<v-row>
+							<v-col cols="6" offset="6" class="d-flex flex-row-reverse">
+								<h3 style="font-size: 25px">OPTIONS</h3>
+							</v-col>
+							<v-container class="px-0" fluid>
+
+								<v-row class="">
+									<v-col class="py-0">
+										<div class="mt-5" v-if="darkMode == false">
+											<v-icon class="mr-5">
+												mdi-white-balance-sunny
+											</v-icon>Activer le mode jour
+										</div>
+										<div class="mt-5" v-if="darkMode == true">
+											<v-icon class="mr-5">
+												mdi-weather-night
+											</v-icon>Activer le mode nuit
+										</div>
+									</v-col>
+
+									<v-col cols="auto" class="py-0">
+										<v-switch v-model="$vuetify.theme.dark" @click="darkMode = !darkMode"></v-switch>
+									</v-col>
+								</v-row>
+
+							</v-container>
+						</v-row>
+					</v-card-text>
 				</v-card>
-				<v-card rounded="xl" style="border-radius: 20px" class="d-flex flex-column ma-2 mt-2 pa-5" height="465" max-width="395" elevation="2" outlined>
-					<v-row>
-						<v-col cols="6"> </v-col>
-						<v-col cols="6" class="d-flex flex-row-reverse">
-							<h3 style="font-size: 25px">STATS</h3>
-						</v-col>
-					</v-row>
+				<v-card rounded="xl" style="border-radius: 20px" class="d-flex flex-column ma-2 mt-2 pa-5" height="68.4vh" max-width="395" elevation="2" outlined>
+					<v-card-text>
+						<v-row>
+							<v-col cols="6"> </v-col>
+							<v-col cols="6" class="d-flex flex-row-reverse">
+								<h3 style="font-size: 25px">STATS</h3>
+							</v-col>
+						</v-row>
+					</v-card-text>
 				</v-card>
 			</v-col>
 		</v-row>
