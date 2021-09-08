@@ -6,21 +6,35 @@
 			</v-btn>
 
 		</div>
-		<div id="description" class="d-flex justify-center">
-			<v-card  
-			  rounded="xl"
-          	  class="mb-4 ma-2 pa-4"
-              height="300"
-              width="700"
-              elevation="2"
-              outlined>
-				<v-card-title class="d-flex justify-center"> Description du jeu </v-card-title>
-				
-				<p class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</v-card>
-		</div>
-		<div class="d-flex justify-center">
-			<v-card 
+
+		<v-container>
+
+			<v-row>
+				<v-col cols="12" sm="6">
+					<v-card  
+						rounded="xl"
+						class="mb-4 ma-2 pa-4"
+						height="300"
+						width="700"
+						elevation="2"
+						outlined>
+						<v-card-title class="d-flex justify-center"> Description du jeu </v-card-title>
+						
+						<v-card-text class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+					</v-card>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-img src="https://picsum.photos/800"/>
+				</v-col>
+			</v-row>
+
+
+			<v-row>
+				<v-col cols="12" sm="6">
+					<v-img src="https://picsum.photos/700"/>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-card 
 			  rounded="xl"
           	  class="mb-4 ma-2 pa-4"
               height="300"
@@ -28,12 +42,16 @@
               elevation="2"
               outlined>
 				<v-card-title class="d-flex justify-center"> Trailler </v-card-title>
+					</v-card>
+				</v-col>
 				
-				<p class="d-flex justify-center"></p>
-			</v-card>
-		</div>
-		<div class="d-flex justify-center">
-			<v-card  
+
+			</v-row>
+
+
+			<v-row>
+				<v-col cols="12" sm="6">
+					<v-card  
 			  rounded="xl"
           	  class="mb-4 ma-2 pa-4"
               height="300"
@@ -51,9 +69,13 @@
 
 			</v-list>
 			</v-card>
-		</div>
+				</v-col>
+				<v-col cols="12" sm="6">
+					<v-img src="https://picsum.photos/600"/>
+				</v-col>
+			</v-row>
+		</v-container>
 	</div>
-
 </template>
 
 <script>
