@@ -30,9 +30,10 @@ const routes = [
 			requiresAuth: true
 		}
 	}, {
-		path: "/game",
+		path: "/game/:id",
 		name: "Game",
 		component: () => import('@/views/Game'),
+		props: true,
 		meta: {
 			requiresAuth: true
 		}
