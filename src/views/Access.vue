@@ -1,115 +1,104 @@
 <template>
-	<html>
-    <head>
-       <meta charset="utf-8">
-        <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
-    </head>
-    <body>
-		<div id="">
-        <div id="containergauche">
-            <!-- zone de connexion -->
-            
-            <form action="verification.php" method="POST">
-                <h1>Connexion</h1>
-                
-                <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+	<v-container>
+		<v-row>
+			<v-col cols="12" sm="6">
 
-                <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+				<v-card>
+					<v-card-title>
+						<span class="display-1">Se connecter</span>
+					</v-card-title>
+					<v-card-text>
+						<form>
+							<v-text-field label="Email" v-model="login.email"></v-text-field>
 
-                <input type="submit" id='submit' value='Se connecter' >
-                
-            </form>
-        </div>
-		 <div id="containerdroit">
-            <!-- zone d'inscription -->
-            
-            <form action="verification.php" method="POST">
-                <h1>S'inscrire</h1>
-                
-                <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+							<v-text-field label="Mot de passe" type="password" v-model="login.password"></v-text-field>
 
-                <label><b>Email</b></label>
-                <input type="email" placeholder="Entrer l'email" name="email" required>
+							<v-btn class="mt-6" color="primary" large block @click="login_method()">Se connecter</v-btn>
+						</form>
+					</v-card-text>
+				</v-card>
 
-				<label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+			</v-col>
+			
+			<v-col cols="12" sm="6">
 
-                <input type="submit" id='submit' value="S'inscrire" >
-                
-            </form>
-        </div>
+				<v-card>
+					<v-card-title>
+						<span class="display-1">S'inscrire</span>
+					</v-card-title>
+					<v-card-text>
+						<form>
+							<v-text-field label="Nom d'utilisateur" v-model="signup.username"></v-text-field>
 
-		</div>
-    </body>
-</html>
-	
+							<v-text-field label="Email" v-model="signup.email"></v-text-field>
+							
+							<v-row>
+								<v-col cols="12" sm="6">
+									<v-text-field label="Mot de passe" type="password" v-model="signup.password"></v-text-field>
+								</v-col>
+								<v-col cols="12" sm="6">
+									<v-text-field label="Confirmation de mot de passe" type="password" v-model="signup.confpassword"></v-text-field>
+								</v-col>
+							</v-row>
+
+							<v-btn class="mt-6" color="primary" large block @click="signup_method()">S'inscrire</v-btn>
+						</form>
+					</v-card-text>
+				</v-card>
+
+			</v-col>
+		</v-row>
+	</v-container>
 </template>
 
 <script>
 	export default {
-		name: "Access"
+		name: "Access",
 
+		data() {
+			return {
+				login: {
+					email: '',
+					password: ''
+				},
+				signup: {
+					username: '',
+					email: '',
+					password: '',
+					confpassword: ''
+				}
+			};
+		},
+
+		methods: {
+			async login_method() {
+				try {
+					await this.$firebase.auth().signInWithEmailAndPassword(this.login.email, this.login.password);
+
+					this.$router.replace({
+						path: "/"
+					});
+				} catch (error) {
+					console.log(error);
+				}
+			},
+
+			signup_method() {
+				this.$firebase.auth().createUserWithEmailAndPassword(this.signup.email, this.signup.password).then(credentials => {
+					credentials.user.updateProfile({
+						displayName: this.signup.username
+					});
+
+					this.$db.collection("users").doc(credentials.user.uid).set({
+						username: this.signup.username,
+						email: this.signup.email,
+						creationDate: new Date()
+					});
+				});
+			}
+		}
 	}
 </script>
 
 <style scoped>
- #body{
-    background: #ffff;
-}
-#containergauche{
-	float:left;
-    width:30%;
-    margin:80px;
-    margin-top:10%;
-}
-#containerdroit{
-	float:right;
-    width:30%;
-    margin:80px;
-    margin-top:10%;
-}
-/* Bordered form */
-form {
-    width:100%;
-    padding: 30px;
-    border: 1px solid #f1f1f1;
-    background: #e3e3e3;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-#container h1{
-    width: 38%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password], input[type=email] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-input[type=submit] {
-    background-color: #39229A;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-input[type=submit]:hover {
-    background-color: white;
-    color: #39229A;
-    border: 1px solid #39229A;
-}
-
 </style>
