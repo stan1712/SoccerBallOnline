@@ -25,10 +25,14 @@ import { appConfig } from "@/components/toLoad/appConfig";
 import { functions } from "@/components/toLoad/functions";
 import { fieldsRules } from "@/components/toLoad/fieldsRules";
 
+import { models } from "@/components/toLoad/models";
+
 Vue.prototype.$appConfig = appConfig;
 
 Vue.prototype.$functions = functions;
 Vue.prototype.$fieldsRules = fieldsRules;
+
+Vue.prototype.$models = models;
 
 firebase.auth().onAuthStateChanged(() => {
 	new Vue({
