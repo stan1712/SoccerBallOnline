@@ -2,7 +2,7 @@
 	<v-app>
 		<Navigation :isTransparent="transparent" />
 
-		<v-main style="background-color: #e3e3e3">
+		<v-main>
 			<transition name="fade" mode="out-in">
 				<router-view :class="margins"></router-view>
 			</transition>
