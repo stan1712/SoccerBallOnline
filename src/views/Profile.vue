@@ -104,14 +104,16 @@
 					displayName: this.userInfo.username,
 					photoURL: this.userInfo.avatar
 				}).then(() => {
+					if(this.userInfo.email !== this.$firebase.auth().currentUser.email) this.$firebase.auth().currentUser.updateEmail(this.userInfo.email);
+
 					this.$db.collection("users").doc(this.$firebase.auth().currentUser.uid).set({
 						username: this.userInfo.username,
 						email: this.userInfo.email,
 						avatar: this.userInfo.avatar,
 					}, {
 						merge: true
-					})
-				})
+					});
+				});
 			}
 		},
 		created() {
