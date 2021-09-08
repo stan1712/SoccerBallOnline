@@ -93,13 +93,32 @@
 			return {
 				switch1: true,
 
-				email: '',
-				emailRules: [
-					v => !!v || 'E-mail is required',
-					v => /.+@.+/.test(v) || 'E-mail must be valid',
-				],
-			};
+				userInfo: this.$models.user,
+				
+				darkMode: false,
+			}
 		},
+		methods: {
+			update() {
+				this.$firebase.auth().currentUser.updateProfile({
+					displayName: this.userInfo.username,
+					photoURL: this.userInfo.avatar
+				}).then(() => {
+					this.$db.collection("users").doc(this.$firebase.auth().currentUser.uid).set({
+						username: this.userInfo.username,
+						email: this.userInfo.email,
+						avatar: this.userInfo.avatar,
+					}, {
+						merge: true
+					})
+				})
+			}
+		},
+		created() {
+			this.$db.collection("users").doc(this.$firebase.auth().currentUser.uid).onSnapshot((user) => {
+				this.userInfo = user.data();
+			});
+		}
 	};
 
 </script>
