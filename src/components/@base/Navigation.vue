@@ -10,6 +10,16 @@
 
 			<v-spacer></v-spacer>
 
+			<template v-if="$firebase.auth().currentUser">
+
+				<v-btn router to="/lobby" color="secondary">
+					<v-icon class="mr-2">mdi-flag-checkered</v-icon> Lancer une partie
+				</v-btn>
+
+				<v-spacer></v-spacer>
+
+			</template>
+
 			<v-btn icon @click="drawer = !drawer">
 				<v-icon>mdi-account</v-icon>
 			</v-btn>
