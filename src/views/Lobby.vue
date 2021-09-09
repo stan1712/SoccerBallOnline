@@ -1,22 +1,12 @@
 <template>
   <div>
-    <v-row>
-      <v-card
-        class="col-8 offset-2"
-        color="white"
-        height="450"
-        outlined
-        shaped
-        elevation="2"
-      >
+    <v-container>
         <v-row>
-          <v-col cols="12" sm="6">
+          <v-col cols="12" sm="4" offset-sm="2">
             <v-card
               class="ma-5"
               color="white"
               height="400"
-              outlined
-              shaped
               elevation="2"
             >
               <v-card-title> Limite de temps </v-card-title>
@@ -24,7 +14,7 @@
                 <v-btn
                   depressed
                   class="my-3 mx-7"
-                  color="green"
+                  color="secondary"
                   elevation="2"
                   x-large
                 >
@@ -33,7 +23,7 @@
                 <v-btn
                   depressed
                   class="my-3 mx-7"
-                  color="green"
+                  color="secondary"
                   elevation="2"
                   x-large
                 >
@@ -42,7 +32,7 @@
                 <v-btn
                   depressed
                   class="my-3 mx-7"
-                  color="green"
+                  color="secondary"
                   elevation="2"
                   x-large
                 >
@@ -50,29 +40,20 @@
                 </v-btn>
               </div>
 
-              <v-btn
-                block
-                depressed
-                elevation="2"
-                fab
-                icon
-                raised
-                rounded
-                color="green"
-              >
-                Jouer
-                <v-icon>mdi-flag-variant </v-icon>
-              </v-btn>
+              <div class="mx-7 mt-12">
+                <v-btn block elevation="2" outlined color="primary">
+                  <v-icon class="mr-2">mdi-flag-variant</v-icon>
+                  Jouer
+                </v-btn>
+              </div>
             </v-card>
           </v-col>
 
-          <v-col cols="12" sm="6">
+          <v-col cols="12" sm="4">
             <v-card
               class="ma-5"
               color="white"
               height="400"
-              outlined
-              shaped
               elevation="2"
             >
               <v-card-title> Limite de but </v-card-title>
@@ -82,7 +63,7 @@
                   depressed
                   class="my-3 mx-7"
                   elevation="2"
-                  color="green"
+                  color="secondary"
                   x-large
                 >
                   5</v-btn
@@ -91,7 +72,7 @@
                   depressed
                   class="my-3 mx-7"
                   elevation="2"
-                  color="green"
+                  color="secondary"
                   x-large
                 >
                   10
@@ -100,32 +81,28 @@
                   depressed
                   class="my-3 mx-7"
                   elevation="2"
-                  color="green"
+                  color="secondary"
                   x-large
                 >
                   15</v-btn
                 >
               </div>
 
-              <div class="d-flex align-end">
+              <div class="mx-7 mt-12">
                 <v-btn
                   block
                   elevation="2"
-                  fab
-                  icon
-                  raised
-                  rounded
-                  color="green"
+                  outlined
+                  color="primary"
                 >
+                  <v-icon class="mr-2">mdi-flag-variant</v-icon>
                   Jouer
-                  <v-icon>mdi-flag-variant </v-icon>
                 </v-btn>
               </div>
             </v-card>
           </v-col>
         </v-row>
-      </v-card>
-    </v-row>
+    </v-container>
   </div>
 </template>
 
