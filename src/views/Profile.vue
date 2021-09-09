@@ -29,15 +29,17 @@
                 <h3 style="font-size: 25px">PROFIL</h3>
               </v-col>
               <v-col cols="12">
-                <v-form class="d-flex justify-start">
+                <v-form class="d-flex justify-start" ref="form">
                   <v-container>
                     <v-text-field
                       v-model="userInfo.username"
+                      :rules="$fieldsRules.required('pseudonyme')"
                       label="Nom d'utilisateur"
                     ></v-text-field>
 
                     <v-text-field
                       v-model="userInfo.email"
+                      :rules="$fieldsRules.email && $fieldsRules.required('email')"
                       label="E-mail"
                     ></v-text-field>
 
@@ -131,6 +133,8 @@ export default {
   },
   methods: {
     update() {
+      if (!this.$refs.form.validate()) return;
+
       this.$firebase
         .auth()
         .currentUser.updateProfile({
