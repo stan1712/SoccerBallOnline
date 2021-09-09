@@ -36,11 +36,11 @@
 									Créateur : {{ userCreator.username }}
 								</span>
 
-								<v-divider vertical class="mx-1"></v-divider>
+								<br/>
 
-								<span>
+								<span v-if="gameInfo.creationDate">
 									<v-icon color="accent" small>mdi-clock-outline</v-icon>
-									Créée le {{ $moment(gameInfo.creationDate.toDate()).format("DD/MM/YYYY") }}
+									Créée le {{ $moment(gameInfo.creationDate.toDate()).format("DD/MM/YYYY à HH:mm") }}
 								</span>
 							</h4>
 						</v-card-text>
