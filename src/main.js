@@ -17,6 +17,9 @@ import "firebase/auth";
 Vue.prototype.$db = db;
 Vue.prototype.$firebase = firebase;
 
+import moment from "moment";
+Vue.prototype.$moment = moment;
+
 Vue.config.productionTip = false;
 
 // IMPORT VARIABLES GLOBALES
