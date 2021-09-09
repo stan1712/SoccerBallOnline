@@ -27,7 +27,7 @@
 
 		watch: {
 			$route: function() {
-				if(this.$route.path === "/") this.margins = "px-5";
+				if(this.$route.path === "/") this.margins = "";
 			}
 		}
 	};
