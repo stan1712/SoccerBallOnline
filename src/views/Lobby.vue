@@ -101,10 +101,16 @@
               </div>
             </v-card>
           </v-col>
+
+          <v-col cols="8" offset="2">
+            <v-img src="@/assets/ImageLobby.png" 
+            max-height="200"/>
+          </v-col>
         </v-row>
     </v-container>
   </div>
 </template>
+
 
 <script>
 export default {
