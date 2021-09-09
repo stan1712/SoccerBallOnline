@@ -1,26 +1,58 @@
 <template>
 	<div>
-		<div class="big d-flex justify-center " style=" background-size: 100%; background-image: url(https://cdn.discordapp.com/attachments/884355153682112513/884772207832760410/PicsArt_09-07-09.46.29.png);">
-			<v-btn class="d-flex justify-center " fab outlined @click="$vuetify.goTo('#description')">
-				<i class="fa fa-chevron-down" aria-hidden="true"></i>
-			</v-btn>
 
-		</div>
+		<section id="base">
+			<v-row no-gutters>
+				<v-img :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'" src="https://cdn.shopify.com/s/files/1/0177/9630/products/joueurs-acier-babyfoot.jpg?v=1493063869" alt="Arrière plan d'accueil">
+					<template v-slot:placeholder>
+						<v-row class="fill-height ma-0" align="center" justify="center">
+							<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+						</v-row>
+					</template>
+
+					<v-theme-provider dark>
+						<v-container fill-height>
+							<v-row align="center" class="white--text mx-auto" justify="center">
+								<v-col class="white--text text-center" cols="12" tag="h1">
+
+									<span :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']" class="font-weight-black grey--text text--darken-4">
+										Soccer Ball Online
+									</span>
+
+									<br>
+
+									<span :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']" class="font-weight-light white--text">
+										LA référence en matière de Babyfoot en ligne.
+									</span>
+
+								</v-col>
+
+								<v-btn aria-label="Poursuivre la visite du site" class="align-self-end" fab outlined @click="$vuetify.goTo('#description')">
+									<v-icon>mdi-chevron-double-down</v-icon>
+								</v-btn>
+							</v-row>
+						</v-container>
+					</v-theme-provider>
+				</v-img>
+			</v-row>
+		</section>
 
 		<v-container>
 
-			<v-row>
-				<v-col cols="12" sm="6">
-					<v-card rounded="xl" class="mb-4 ma-2 pa-4" height="300" width="700" elevation="2" outlined>
-						<v-card-title class="d-flex justify-center"> Description du jeu </v-card-title>
+			<section id="description">
+				<v-row>
+					<v-col cols="12" sm="6">
+						<v-card rounded="xl" class="mb-4 ma-2 pa-4" height="300" width="700" elevation="2" outlined>
+							<v-card-title class="d-flex justify-center"> Description du jeu </v-card-title>
 
-						<v-card-text class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
-					</v-card>
-				</v-col>
-				<v-col cols="12" sm="6">
-					<v-img src="https://picsum.photos/800" />
-				</v-col>
-			</v-row>
+							<v-card-text class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+						</v-card>
+					</v-col>
+					<v-col cols="12" sm="6">
+						<v-img src="https://picsum.photos/800" />
+					</v-col>
+				</v-row>
+			</section>
 
 
 			<v-row>
