@@ -1286,6 +1286,11 @@
     string-width "^2.0.0"
     strip-ansi "^5"
 
+"@sweetalert2/theme-material-ui@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-material-ui/-/theme-material-ui-5.0.4.tgz#f8dca43791e2a4f0ddbbcefb9643939d904da4aa"
+  integrity sha512-4JJt27XMpZ8m00Mqqk4iwFvEB4GPnEtNylEKGjPs2GmxoQ0+e5v+P9L/Do+ejznE/xD/H3XkfShq30yZAn/24Q==
+
 "@types/glob@^7.1.1":
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.4.tgz#ea59e21d2ee5c517914cb4bc8e4153b99e566672"
@@ -8449,6 +8454,11 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^11.1.5:
+  version "11.1.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.1.5.tgz#6bc0d681e8f83c744a9284a84aefbfdcc7d92bec"
+  integrity sha512-5cfqUK9lLbvxtjzsvORKWj+d3tcgYlzsL60FoJFXE/+mtMa5EJ3tDax9p9MBjVnZ60gQd+WGrqDIrxoNenhUjA==
 
 table@4.0.2:
   version "4.0.2"

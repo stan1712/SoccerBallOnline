@@ -92,7 +92,7 @@
 								</v-col>
 								<v-col cols="12" sm="6">
 									<p>Flèche gauche/droite = Sélectionner une rangée de joueurs</p>
-									<p>Flèche haut = Tirer</p>
+									<p>Flèche haut/bas = Déplacer les joueurs sur la ligne</p>
 								</v-col>
 							</v-row>
 						</v-card-text>

@@ -20,6 +20,9 @@ Vue.prototype.$firebase = firebase;
 import moment from "moment";
 Vue.prototype.$moment = moment;
 
+import Swal from "sweetalert2";
+Vue.prototype.$Swal = Swal;
+
 Vue.config.productionTip = false;
 
 // IMPORT VARIABLES GLOBALES
