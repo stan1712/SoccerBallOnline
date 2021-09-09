@@ -23,17 +23,15 @@
                 <h3 style="font-size: 25px">PROFIL</h3>
               </v-col>
               <v-col cols="12">
-                <v-form class="d-flex justify-start" ref="form">
+                <v-form class="d-flex justify-start">
                   <v-container>
                     <v-text-field
                       v-model="userInfo.username"
-                      :rules="$fieldsRules.required('pseudonyme')"
                       label="Nom d'utilisateur"
                     ></v-text-field>
 
                     <v-text-field
                       v-model="userInfo.email"
-                      :rules="$fieldsRules.email && $fieldsRules.required('email')"
                       label="E-mail"
                     ></v-text-field>
 
@@ -117,10 +115,10 @@
 
                 <v-progress-linear
                   class="rounded-sm"
-                  v-model="knowledge"
+                  v-model="moyenne"
                   height="100"
                 >
-                  <strong>{{ Math.ceil(knowledge) }}%</strong>
+                  <strong>{{ moyenne }}%</strong>
                 </v-progress-linear>
               </v-container>
             </v-row>
@@ -143,13 +141,13 @@ export default {
 
       darkMode: false,
 
-      knowledge: 33,
+      parties: 33,
+
+      win: 100,
     };
   },
   methods: {
     update() {
-      if (!this.$refs.form.validate()) return;
-
       this.$firebase
         .auth()
         .currentUser.updateProfile({
@@ -174,6 +172,11 @@ export default {
               }
             );
         });
+    },
+  },
+  computed: {
+    moyenne: function () {
+      return 33;
     },
   },
   created() {
