@@ -12,12 +12,12 @@ export let appConfig = {
 
 	socials: [{
 		displayName: 'Facebook',
-		link: 'https://www.facebook.com/',
+		link: 'https://www.facebook.com/profile.php?id=100072344906031',
 		icon: 'mdi-facebook',
 	}, {
-		displayName: 'Youtube',
-		link: 'https://www.youtube.com/',
-		icon: 'mdi-youtube',
+		displayName: 'Linkedin',
+		link: 'https://www.linkedin.com/in/soccer-ball-online-01685921b',
+		icon: 'mdi-linkedin',
 	}],
 
 	//CONTACT
