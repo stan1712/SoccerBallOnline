@@ -70,13 +70,14 @@
 						</v-card-actions>
 					</v-card>
 				</v-col>
-			</v-row>
-
-			<v-card class="mt-8" height="500">
 				
-			</v-card>
+				<v-col cols="12" sm="6" offset-sm="3">
+					<v-card class="mt-8">
 
-			<v-row>
+						<v-img src="https://cdn.discordapp.com/attachments/884355153682112513/885462804923031602/unknown.png" contain></v-img>
+
+					</v-card>
+				</v-col>
 
 				<v-col cols="12" sm="6">
 					<v-card class="mt-8">
@@ -108,6 +109,16 @@
 						</v-card-title>
 						<v-card-text>
 							<v-text-field label="Nom de la partie" v-model="gameInfo.name"></v-text-field>
+
+							<v-row>
+								<v-col cols="12" sm="6">
+									<v-text-field label="Limite de but" type="number" hint="'-1' désactive la fonctionnalité" v-model="gameInfo.options.buts" suffix="buts"></v-text-field>
+								</v-col>
+								<v-col cols="12" sm="6">
+									<v-text-field label="Limite de temps" type="number" hint="'-1' désactive la fonctionnalité" v-model="gameInfo.options.time" suffix="minutes"></v-text-field>
+								</v-col>
+							</v-row>
+
 
 							<v-row class="mt-5">
 								<v-col cols="12" md="6" class="pt-0">
@@ -170,7 +181,11 @@
 				});
 			},
 			deleteGame() {
-				// Voir pour un modal
+				this.$db.collection("games").doc(this.id).delete();
+
+				this.$router.replace({
+					path: `/`
+				});
 			}
 		},
 		created(){
