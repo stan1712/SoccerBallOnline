@@ -42,52 +42,43 @@
 			<section id="description">
 				<v-row>
 					<v-col cols="12" sm="6">
-						<v-card rounded="xl" class="mb-4 ma-2 pa-4" height="300" width="700" elevation="2" outlined>
+						<v-card class="mb-4 ma-2 pa-4" height="375" width="700" elevation="2" >
 							<v-card-title class="d-flex justify-center"> Description du jeu </v-card-title>
 
-							<v-card-text class="d-flex justify-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+							<v-card-text class="d-flex justify-center">Un jeu de baby-foot jouable sur navigateur internet où vous pourrez jouer contre des Bot, la difficulté augmentera au fil des parties. 
+Vous choisirez la durée de votre partie en choisissant soit une limite de but ou bien avec une limite de temps.
+C’est nouvelle façon de jouer au Baby-foot au sein du campus pour tous le monde puisque vous n’avez besoin que de votre Laptop.
+A la sortie du jeux officielle la fonctionnalité « online » sera dispo pour pouvoir jouer avec vos amis.</v-card-text>
 						</v-card>
 					</v-col>
 					<v-col cols="12" sm="6">
-						<v-img src="https://picsum.photos/800" />
+						<v-img src="https://cdn.shopify.com/s/files/1/0177/9630/products/terrain-babyfoot_grande.jpg?v=1493063869 " />
 					</v-col>
 				</v-row>
 			</section>
 
+		</v-container>
+		<v-container class="d-flex justify-center">
+			<section >
+				<v-row >
+					<v-col cols="110" sm="12" >
+						<v-card class="mb-4 ma-2 pa-4" height="350" width="700" elevation="2" >
+							<v-card-title class="d-flex justify-center"> Crédits </v-card-title>
 
-			<v-row>
-				<v-col cols="12" sm="6">
-					<v-img src="https://picsum.photos/700" />
-				</v-col>
-				<v-col cols="12" sm="6">
-					<v-card rounded="xl" class="mb-4 ma-2 pa-4" height="300" width="700" elevation="2" outlined>
-						<v-card-title class="d-flex justify-center"> Trailler </v-card-title>
-					</v-card>
-				</v-col>
-
-
-			</v-row>
-
-
-			<v-row>
-				<v-col cols="12" sm="6">
-					<v-card rounded="xl" class="mb-4 ma-2 pa-4" height="300" width="700" elevation="2" outlined>
-						<v-card-title class="d-flex justify-center"> Crédits </v-card-title>
-
-						<p class="d-flex justify-center">Projet Workshop réalisé sur 5 jours par quatre B2 de l'EPSI Bordeaux et 2 SN2.</p>
-						<v-list class="d-flex justify-center"> <br>
-							Stanislas Castaybert <br>
-							Kilyan Maillard <br>
-							Begüm Cetin <br>
-							Matheo Carlier <br>
-
-						</v-list>
-					</v-card>
-				</v-col>
-				<v-col cols="12" sm="6">
-					<v-img src="https://picsum.photos/600" />
-				</v-col>
-			</v-row>
+							<p class="d-flex justify-center">Projet Workshop réalisé sur 5 jours par quatre B2 de l'EPSI Bordeaux et 2 SN2.</p>
+							<v-list class="d-flex justify-center"> <br>
+								Stanislas Castaybert <br>
+								Kilyan Maillard <br>
+								Begüm Cetin <br>
+								Matheo Carlier <br>
+								Theo Melendreras <br>
+								Ilias Lazaar <br>
+								Gaignierre Cyrille
+							</v-list>
+						</v-card>
+					</v-col>
+				</v-row>
+			</section>
 		</v-container>
 	</div>
 </template>
