@@ -2,13 +2,7 @@
   <div>
     <v-row class="ma-5">
       <v-col cols="6" class="d-flex justify-end">
-        <v-card
-          class="ma-2 pa-5"
-          height="85vh"
-          max-width="395"
-          elevation="2"
-          outlined
-        >
+        <v-card class="ma-2 pa-5" max-width="395" elevation="2" outlined>
           <v-card-text>
             <v-row>
               <v-col cols="6">
@@ -59,13 +53,7 @@
       </v-col>
 
       <v-col cols="6">
-        <v-card
-          class="mb-4 ma-2 pa-5"
-          height="15vh"
-          max-width="395"
-          elevation="2"
-          outlined
-        >
+        <v-card class="mb-4 ma-2 pa-5" max-width="395" elevation="2" outlined>
           <v-card-text>
             <v-row>
               <v-col cols="6" offset="6" class="d-flex flex-row-reverse">
@@ -97,7 +85,6 @@
         </v-card>
         <v-card
           class="d-flex flex-column ma-2 mt-2 pa-5"
-          height="68.4vh"
           max-width="395"
           elevation="2"
           outlined
@@ -108,6 +95,32 @@
               <v-col cols="6" class="d-flex flex-row-reverse">
                 <h3 style="font-size: 25px">STATS</h3>
               </v-col>
+              <v-container>
+                <v-row>
+                  <v-col class="d-flex align-center">
+                    <p style="font-size: 15px">
+                      Nombre de parties joué en ligne : <strong>100</strong>
+                    </p>
+                  </v-col>
+                </v-row>
+                <p style="font-size: 15px">
+                  Nombre de but maximum dans une partie : <strong>12</strong>
+                </p>
+
+                <v-divider class="my-5"></v-divider>
+
+                <p style="font-size: 15px">
+                  Nombre de matchs gagné : <strong>33</strong>
+                </p>
+
+                <v-progress-linear
+                  class="rounded-sm"
+                  v-model="knowledge"
+                  height="100"
+                >
+                  <strong>{{ Math.ceil(knowledge) }}%</strong>
+                </v-progress-linear>
+              </v-container>
             </v-row>
           </v-card-text>
         </v-card>
@@ -127,6 +140,8 @@ export default {
       userInfo: this.$models.user,
 
       darkMode: false,
+
+      knowledge: 33,
     };
   },
   methods: {
