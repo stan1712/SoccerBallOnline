@@ -3,7 +3,7 @@ export let appConfig = {
 
 	name: "SoccerBallOnline",
 	URL: "www.soccerball.online",
-	logoUrl: "https://infographart.com/ressources/logos/IFGA/LogoIFGA.svg",
+	logoUrl: "https://stan1712.com/share/PicsArt_09-06-03.46.42.png",
 
 	// SOCIALS
 
